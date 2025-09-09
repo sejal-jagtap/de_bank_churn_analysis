@@ -31,13 +31,13 @@ This project analyzes customer churn in a banking dataset. The goal is to predic
 
 LIBRARIES USED
 
-  pandas for data manipulation
+  -> pandas for data manipulation
   
-  numpy for numerical operations
+  -> numpy for numerical operations
   
-  seaborn & matplotlib for visualization
+  -> seaborn & matplotlib for visualization
   
-  scikit-learn for preprocessing, train/test split, and modeling
+  -> scikit-learn for preprocessing, train/test split, and modeling
 
 ### 2. DATA CLEANING
    
