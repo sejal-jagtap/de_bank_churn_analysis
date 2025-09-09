@@ -58,7 +58,9 @@ LIBRARIES USED
    -> Calculate precision, recall, F1 measure, and support using the below scikit learn classes:
    
      classification_report()
+   
      confusion_matrix()
+   
      accuracy_score
 
    
@@ -88,11 +90,14 @@ de_bank_churn_analysis/
 4. Make file commands (cmd)
    
    make install #Installs dependencies
+   
    make lint #Runs flake8
+
    make format #Formats code with black
+   
    make clean #Cleans cache and coverage files
 
-5. Run the Python script (cmd)
+6. Run the Python script (cmd)
    
    python bank_churn_analysis.py
 
