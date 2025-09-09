@@ -55,7 +55,6 @@ plt.show()
 
 # Check if there's any relation between individual columns and the output.
 # eg.See if gender has any effect on customer churn.
-# 0: Female, 1: Male
 
 # 1.Gender and Customer Churn Relationship
 # target variable : Exited
@@ -135,7 +134,7 @@ features.select_dtypes(include="object").columns
 # test will consist of 20% of the total dataset.
 # using train_test_split from package - sklearn.model_selection   (import statement at the beginning)
 # train_test_split shuffles the data and outputs 4 arrays/dataframes
-# input args - features: churn_data excluding exited, label: target column, test_size: 20% for test, 
+# input args - features: churn_data excluding exited, label: target column, test_size: 20% for test,
 # random_state= seed to ensure reproducibilty
 
 train_features, test_features, train_labels, test_labels = train_test_split(
