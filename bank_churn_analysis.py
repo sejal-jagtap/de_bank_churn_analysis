@@ -12,6 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
 
 # Read data from the csv file
+# Source: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
 
 churn_data = pd.read_csv("C:/Users/sejal/Dropbox/PC/Desktop/Customer-Churn-Records.csv")
 churn_data.head()
