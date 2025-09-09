@@ -49,7 +49,7 @@ LIBRARIES USED
   
   -> Explore data to observe correlation patterns and check if certain columns need encoding.
 
-  <img width="471" height="316" alt="image" src="https://github.com/user-attachments/assets/b3208a41-cf94-4e34-a21f-2e51f85acbdc" />
+  <img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/b3208a41-cf94-4e34-a21f-2e51f85acbdc" />
   <img width="471" height="316" alt="image" src="https://github.com/user-attachments/assets/d1874a9f-e64f-406d-9ddc-cf0b5eac400c" />
   <img width="471" height="316" alt="image" src="https://github.com/user-attachments/assets/dab61408-c567-48d7-a0a5-f55489901d0b" />
   
