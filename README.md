@@ -77,11 +77,12 @@ LIBRARIES USED
 Repository structure:
 
 de_bank_churn_analysis/
-├── requirements.txt            # Python dependencies
-├── bank_churn_analysis.py      # Main Python Flask application
-├── Makefile                    # Automation for Docker commands
-└── README.md                   # Project documentation
-└── Customer-Churn-Records.csv  # Dataset used for analysis
+└── Customer-Churn-Records.csv             # Dataset used for analysis
+├── Makefile                               # Automation for Docker commands
+└── README.md                              # Project documentation
+├── bank_churn_analysis.py                 # Main Python Flask application
+├── bank_churn_analysis_interactive.ipynb  # Jupyter nbk with results
+├── requirements.txt                       # Python dependencies
 
 ### 1. Clone repository: (cmd)
    
@@ -108,6 +109,8 @@ de_bank_churn_analysis/
 ### 6. Run the Python script (cmd)
    
    python bank_churn_analysis.py
+
+### 7. Jupyter notebook attached as a reference
 
 
 
