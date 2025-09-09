@@ -3,7 +3,7 @@ Predict which customers might leave your bank before it happens! 🏃
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
-## 1. DATA
+### 1. DATA
    
   Dataset: Customer-Churn-Records.csv (file added in repo)
   The dataset contains information on bank customers, including:
@@ -39,7 +39,7 @@ LIBRARIES USED
   
   scikit-learn for preprocessing, train/test split, and modeling
 
-# 2. DATA CLEANING
+### 2. DATA CLEANING
    
   -> Check if data has duplicates.
   
@@ -49,7 +49,7 @@ LIBRARIES USED
   
   -> Explore data to observe correlation patterns and check if certain columns need encoding.
   
-3. DATA PREPROCESSING
+### 3. DATA PREPROCESSING
    
   -> Dropped categorical columns - Geography, Gender, Card Type, and encoded them using one-hot encoding.
   
@@ -57,7 +57,7 @@ LIBRARIES USED
   
   -> Split the dataset into training (80%) and testing (20%) sets.
 
-4. ML MODEL
+### 4. ML MODEL
    
    a. Random Forest Classifier
    
@@ -72,7 +72,7 @@ LIBRARIES USED
      accuracy_score
 
    
-HOW TO USE THE CODE 💻
+## HOW TO USE THE CODE 💻
 
 Repository structure:
 
@@ -83,19 +83,19 @@ de_bank_churn_analysis/
 └── README.md                   # Project documentation
 └── Customer-Churn-Records.csv  # Dataset used for analysis
 
-1. Clone repository: (cmd)
+### 1. Clone repository: (cmd)
    
   git clone <url> 
 
-2. Create and activate the virtual environment: (cmd)
+### 2. Create and activate the virtual environment: (cmd)
    
   .de_bank_churn_analysis\Scripts\activate.bat
 
-3. Install Dependencies (cmd)
+### 3. Install Dependencies (cmd)
    
    pip install -r requirements.txt
    
-4. Make file commands (cmd)
+### 4. Make file commands (cmd)
    
    make install #Installs dependencies
    
@@ -105,7 +105,7 @@ de_bank_churn_analysis/
    
    make clean #Cleans cache and coverage files
 
-6. Run the Python script (cmd)
+### 6. Run the Python script (cmd)
    
    python bank_churn_analysis.py
 
