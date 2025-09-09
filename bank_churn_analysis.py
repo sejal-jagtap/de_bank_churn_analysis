@@ -80,8 +80,7 @@ counts
 # Since Geography and Gender columns are categorical columns ,
 # We convert categorical data into numerical data using one-hot encoding scheme.
 
-# FOR regression model remove the categorical column and
-# add one column for each of the unique values in the removed column.
+# FOR regression model remove the categorical column and add one column for each of the unique values in the removed column.
 # Then add 1 to the column where the actual value existed and add 0 to the rest of the columns.
 
 # 1. Remove the Geography column
@@ -136,7 +135,8 @@ features.select_dtypes(include="object").columns
 # test will consist of 20% of the total dataset.
 # using train_test_split from package - sklearn.model_selection   (import statement at the beginning)
 # train_test_split shuffles the data and outputs 4 arrays/dataframes
-# input args - features: churn_data excluding exited, label: target column, test_size: 20% for test, random_state= seed to ensure reproducibilty
+# input args - features: churn_data excluding exited, label: target column, test_size: 20% for test, 
+# random_state= seed to ensure reproducibilty
 
 train_features, test_features, train_labels, test_labels = train_test_split(
     features, labels, test_size=0.2, random_state=20
