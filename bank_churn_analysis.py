@@ -29,6 +29,8 @@ churn_data.head()
 # info about data types and non-null values
 churn_data.info()
 
+churn_data.describe()
+
 # Explore the distribution of gender
 plt.figure(figsize=(5, 3))
 sns.countplot(
