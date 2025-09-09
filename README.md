@@ -3,7 +3,7 @@ Predict which customers might leave your bank before it happens! 🏃
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
-# 1. DATA
+## 1. DATA
    
   Dataset: Customer-Churn-Records.csv (file added in repo)
   The dataset contains information on bank customers, including:
