@@ -39,7 +39,7 @@ LIBRARIES USED
   
   scikit-learn for preprocessing, train/test split, and modeling
 
-2. DATA CLEANING
+# 2. DATA CLEANING
    
   -> Check if data has duplicates.
   
