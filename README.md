@@ -32,21 +32,29 @@ This project analyzes customer churn in a banking dataset. The goal is to predic
 LIBRARIES USED
 
   pandas for data manipulation
+  
   numpy for numerical operations
+  
   seaborn & matplotlib for visualization
+  
   scikit-learn for preprocessing, train/test split, and modeling
 
 2. DATA CLEANING
    
   -> Check if data has duplicates.
+  
   -> Check if data has NULL/NA values.
+  
   -> Drop unnecessary columns that do not influence churn (eg, RowNumber, CustomerId, Surname).
+  
   -> Explore data to observe correlation patterns and check if certain columns need encoding.
   
 3. DATA PREPROCESSING
    
   -> Dropped categorical columns - Geography, Gender, Card Type, and encoded them using one-hot encoding.
+  
   -> Concatenated numeric features and encoded categorical variables into a single dataset.
+  
   -> Split the dataset into training (80%) and testing (20%) sets.
 
 4. ML MODEL
