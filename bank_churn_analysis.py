@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier as rfc
 # Read data from the csv file
 # Source: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
 
-churn_data = pd.read_csv("C:/Users/sejal/Dropbox/PC/Desktop/Customer-Churn-Records.csv")
+churn_data = pd.read_csv("Customer-Churn-Records.csv")
 churn_data.head()
 
 # 1.check for missing values
@@ -41,6 +41,7 @@ sns.countplot(
 )
 plt.title("Distribution of Gender")
 plt.xlabel("Female = 0 , Male = 1")
+plt.ylabel('Population count')
 plt.show()
 
 # Explore the distribution of age
@@ -54,6 +55,7 @@ plt.figure(figsize=(5, 3))
 sns.countplot(x="HasCrCard", data=churn_data, palette={"0": "red", "1": "green"})
 plt.title(" Customer Has a Credit Card ?")
 plt.xlabel(" No = 0 , Yes = 1 ")
+plt.ylabel("Population count")
 plt.show()
 
 # Check if there's any relation between individual columns and the output.
