@@ -49,9 +49,10 @@ LIBRARIES USED
   
   -> Explore data to observe correlation patterns and check if certain columns need encoding.
 
-  <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/b3208a41-cf94-4e34-a21f-2e51f85acbdc" />
-  <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/d1874a9f-e64f-406d-9ddc-cf0b5eac400c" />
-  <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/dab61408-c567-48d7-a0a5-f55489901d0b" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/6720d692-58d7-4319-8836-7c79727ad8ea" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/fa84755a-4bdf-4562-9010-d1192c767a8d" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/f7976700-6bfd-4701-ba15-32a5a33acc2c" />
+
   
 ### 3. DATA PREPROCESSING
    
