@@ -10,6 +10,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
+from sklearn.preprocessing import StandardScaler
 
 # Read data from the csv file
 # Source: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
@@ -41,12 +42,13 @@ sns.countplot(
 )
 plt.title("Distribution of Gender")
 plt.xlabel("Female = 0 , Male = 1")
-plt.ylabel('Population count')
+plt.ylabel('Number of Customers')
 plt.show()
 
 # Explore the distribution of age
 plt.figure(figsize=(5, 3))
 sns.histplot(x="Age", data=churn_data, bins=25)
+plt.ylabel("Number of Customers")
 plt.title("Distribution of Age")
 plt.show()
 
@@ -55,7 +57,7 @@ plt.figure(figsize=(5, 3))
 sns.countplot(x="HasCrCard", data=churn_data, palette={"0": "red", "1": "green"})
 plt.title(" Customer Has a Credit Card ?")
 plt.xlabel(" No = 0 , Yes = 1 ")
-plt.ylabel("Population count")
+plt.ylabel("Number of Customers")
 plt.show()
 
 # Check if there's any relation between individual columns and the output.
@@ -65,9 +67,10 @@ plt.show()
 # target variable : Exited
 
 counts = churn_data.groupby(["Gender", "Exited"]).Exited.count().unstack()
-
-counts.plot(kind="bar", stacked=True)
-counts
+gender_exited = counts.plot(kind="bar", stacked=True)
+gender_exited.set_xlabel("Gender")
+gender_exited.set_ylabel("Number of Customers")
+gender_exited
 
 # From the visualization, Female customers left the bank more often compared to the Male customers.
 churn_data.head()
@@ -77,9 +80,11 @@ churn_data.head()
 # target variable : Exited
 
 counts = churn_data.groupby(["Geography", "Exited"]).Exited.count().unstack()
+geo_exited = counts.plot(kind="bar", stacked=True)
+geo_exited.set_xlabel("Geography")
+geo_exited.set_ylabel("Number of Customers")
+geo_exited
 
-counts.plot(kind="bar", stacked=True)
-counts
 
 # Since Geography and Gender columns are categorical columns ,
 # We convert categorical data into numerical data using one-hot encoding scheme.
@@ -165,11 +170,11 @@ predicted_labels = rfc_object.predict(test_features)
 # from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 # Evaluate performance
 
-print(classification_report(test_labels, predicted_labels))
+print("Classification Report: \n",classification_report(test_labels, predicted_labels))
 
-print(confusion_matrix(test_labels, predicted_labels))
+print("Confusion Matrix: \n",confusion_matrix(test_labels, predicted_labels))
 
-print(accuracy_score(test_labels, predicted_labels))
+print("Accuracy score: \n",accuracy_score(test_labels, predicted_labels))
 
 # Random Forest model accuracy of 99.8 for customer churn prediction.
 
@@ -178,19 +183,23 @@ print(accuracy_score(test_labels, predicted_labels))
 # 2.Logistic regression:
 
 # from sklearn.linear_model import LogisticRegression
+scalar = StandardScaler()
 
-lr_object = LogisticRegression()
+train_scaled = pd.DataFrame(scalar.fit_transform(train_features), columns= train_features.columns)
+test_scaled = pd.DataFrame(scalar.fit_transform(test_features), columns= test_features.columns)
 
-lr_object.fit(train_features, train_labels)
+lr = LogisticRegression(solver='saga',max_iter=1000,random_state=20)
 
-predicted_labels = lr_object.predict(test_features)
+lr.fit(train_scaled, train_labels)
+
+predicted_labels = lr.predict(test_scaled)
 
 # Evaluate performance:
 
-print(classification_report(test_labels, predicted_labels))
+print("Classification Report: \n", classification_report(test_labels, predicted_labels))
 
-print(confusion_matrix(test_labels, predicted_labels))
+print("Confusion Matrix: \n", confusion_matrix(test_labels, predicted_labels))
 
-print(accuracy_score(test_labels, predicted_labels))
+print("Accuracy score: \n", accuracy_score(test_labels, predicted_labels))
 
-# Logistic Regression model accuracy: 79.1%
+# Logistic Regression model accuracy: 99.85%
