@@ -130,8 +130,6 @@ def split_features_labels(df):
 # input args - features: churn_data excluding exited, label: target column, test_size: 20% for test,
 # random_state= seed to ensure reproducibilty
 
-
-
 # 1. Random forest
 # n_estimators:Number of decision trees in the forest.
 #             More trees → usually better performance but slower training
