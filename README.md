@@ -101,7 +101,6 @@ Tests cover:
 Test Result:
 
 <img width="681" height="257" alt="image" src="https://github.com/user-attachments/assets/ca2f6651-3d26-4511-b1c6-599d6cdf65f6" />
-
 ## HOW TO USE THE CODE 💻
 
 Repository structure:
@@ -120,7 +119,7 @@ de_bank_churn_analysis
 ## Environment Setup
 You can set up your environment in two ways: using VS Code dev container or using Docker directly.
 
-### Using Dev Container (Recommended)
+### A] Using Dev Container (Recommended)
   1. Install VSCode (https://code.visualstudio.com/) and the Dev Containers/Remote - Containers extension.
   2. VS Code detects the .devcontainer folder automatically.
   3. Open the cloned project in VS Code.
@@ -139,7 +138,7 @@ You can set up your environment in two ways: using VS Code dev container or usin
 
 ### OR
 
-### Using Docker
+### B] Using Docker
 
 Note: Docker Desktop should be installed on your device.
       Check Docker version to confirm (bash): docker --version
