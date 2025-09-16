@@ -17,18 +17,14 @@ from bank_churn_analysis import(
 @pytest.fixture(scope="module")  #runs once per test file
 def churn_data():
     #load data 
-    base_dir = os.path.dirname(__file__)
-    file_path = os.path.join(base_dir, "Customer-Churn-Records.csv")
-    assert os.path.exists(file_path), f"CSV not found at {file_path}"
-    return pd.read_csv(file_path)
-    
+    df =load_data()
+    df_processed = preprocess_data(df)
+    return df_processed
 
 @pytest.fixture(scope="module") 
 def processed_data(churn_data):
     #returns features, labels after preprocessing
-    df =load_data()
-    df_processed = preprocess_data(df)
-    features, labels = split_features_labels(df_processed)
+    features, labels = split_features_labels(churn_data)
     return train_test_split(features, labels, test_size=0.2, random_state=20)
 
 def test_load_data(churn_data):
@@ -39,14 +35,14 @@ def test_load_data(churn_data):
 
 def test_preprocess_data(churn_data):
     #check if preprocess removes categorical columns and adds dummies - one hot encoding
-    df_processed = preprocess_data(churn_data)
-    assert "Geography" not in df_processed.columns
-    assert "Gender" not in df_processed.columns
-    assert "Card Type" not in df_processed.columns
+    #df_processed = preprocess_data(churn_data)
+    assert "Geography" not in churn_data.columns
+    assert "Gender" not in churn_data.columns
+    assert "Card Type" not in churn_data.columns
     #new/dummy columns must exists
-    assert any(c in  df_processed.columns for c in ["France","Spain","Germany"])
-    assert any(c in  df_processed.columns for c in ["Male"])
-    assert df_processed.isnull().sum().sum() == 0
+    assert any(c in  churn_data.columns for c in ["France","Spain","Germany"])
+    assert any(c in  churn_data.columns for c in ["Male"])
+    assert churn_data.isnull().sum().sum() == 0
 
 def test_split_features_labels(processed_data):
 
@@ -61,7 +57,7 @@ def test_random_forest_training(processed_data):
     prediction = predict_and_evaluate(model, test_features, test_labels)
     assert len(prediction) == len(test_labels)
 
-def test_logistic_regression_raining(processed_data):
+def test_logistic_regression_training(processed_data):
     train_features, test_features, train_labels, test_labels = processed_data
     model, scaler = train_logistic_regression(train_features, train_labels)
     prediction = predict_and_evaluate(model, test_features, test_labels, scaler)
