@@ -108,23 +108,16 @@ Repository structure:
 
 de_bank_churn_analysis
 |-- .devcontainer
-
-|   `-- devcontainer.json
-
+|   -- devcontainer.json
 |-- .gitignore
-
 |-- Customer-Churn-Records.csv
-
 |-- Dockerfile
-
 |-- Makefile
-
 |-- README.md
-
 |-- bank_churn_analysis.py
 |-- bank_churn_analysis_interactive.ipynb
 |-- requirements.txt
-`-- test_bank_churn.py
+ -- test_bank_churn.py
 
 ### 1. Clone repository: (cmd)
    
