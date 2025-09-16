@@ -99,7 +99,6 @@ Tests cover:
   -> Predictions and evaluation
 
 Test Result:
-
 <img width="681" height="257" alt="image" src="https://github.com/user-attachments/assets/ca2f6651-3d26-4511-b1c6-599d6cdf65f6" />
 
 ## HOW TO USE THE CODE 💻
