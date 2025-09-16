@@ -1,19 +1,21 @@
 
 # Makefile for Bank Churn Project
 
-PYTHON := python
-
+#PYTHON := python
+.PHONY: install test run clean
 
 install:
-	pip install -r requirements.txt
+	pip install --no-cache-dir -r requirements.txt
+#Run tests
+test:
+	pytest -v
 
-lint:
-	flake8 bank_churn_analysis.py
+#Run main script
+run:
+	python bank_churn_analysis.py
 
-format:
-	black bank_churn_analysis.py
-
+# Remove pycache files
 clean:
-	rm -rf __pycache__ .pytest_cache .mypy_cache
-
-all: install format lint test
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type f -name "*.pyc" -delete
+	rm -rf .pytest_cache

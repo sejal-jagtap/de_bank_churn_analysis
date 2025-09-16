@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3 - Dev Container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	//"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	"build":{
+		"dockerfile":"../Dockerfile",
+		"context": ".."
+	},
+
+	"workspaceFolder": "/workspaces/de_bank_churn_analysis",
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	 "postCreateCommand": "make install",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"terminal.integrated.shell.linux": "/bin/bash"
+			}
+		}
+	},
+	 "remoteUser": "root"
+}
+

@@ -66,22 +66,3 @@ def test_logistic_regression_raining(processed_data):
     model, scaler = train_logistic_regression(train_features, train_labels)
     prediction = predict_and_evaluate(model, test_features, test_labels, scaler)
     assert len(prediction) == len(test_labels)
-
-'''
-$ pytest -v test_bank_churn.py
-================================================== test session starts ===================================================
-platform win32 -- Python 3.12.11, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\sejal\miniforge3\python.exe
-cachedir: .pytest_cache
-rootdir: C:\Users\sejal\Dropbox\PC\Desktop\Fall_2025_Sem1\DE\de_bank_churn_analysis
-plugins: anyio-4.7.0
-collected 5 items                                                                                                         
-
-test_bank_churn.py::test_load_data PASSED                                                                           [ 20%] 
-test_bank_churn.py::test_preprocess_data PASSED                                                                     [ 40%] 
-test_bank_churn.py::test_split_features_labels PASSED                                                               [ 60%] 
-test_bank_churn.py::test_random_forest_training PASSED                                                              [ 80%] 
-test_bank_churn.py::test_logistic_regression_raining PASSED                                                         [100%] 
-
-=================================================== 5 passed in 3.22s ==================================================== 
-
-'''
