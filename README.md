@@ -3,7 +3,11 @@ Predict which customers might leave your bank before it happens! 🏃
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
-### 1. DATA
+This project uses Python, Pandas, Scikit-learn and Seaborn.
+It trains Random Forrest and Logistic Regression models to predict bank churn and includes exploratory data analysis visualizations.
+### Jupyter notebook attached as a reference
+
+### 1. ABOUT DATA
    
   Dataset: Customer-Churn-Records.csv (file added in repo)
   The dataset contains information on bank customers, including:
@@ -76,48 +80,111 @@ LIBRARIES USED
    
      accuracy_score
 
-   
+## TESTING
+
+Tests are written with pytest in test_bank_churn.py
+
+Tests cover:
+
+  -> Data loading
+
+  -> Data preprocessing
+
+  -> Feature/Label split
+  
+  -> Random Forest Training
+
+  -> Logistic Regression Training
+
+  -> Predictions and evaluation
+
+Test Result:
+
+
 ## HOW TO USE THE CODE 💻
 
 Repository structure:
 
-de_bank_churn_analysis/
-└── Customer-Churn-Records.csv             # Dataset used for analysis
-├── Makefile                               # Automation for Docker commands
-└── README.md                              # Project documentation
-├── bank_churn_analysis.py                 # Main Python Flask application
-├── bank_churn_analysis_interactive.ipynb  # Jupyter nbk with results
-├── requirements.txt                       # Python dependencies
+de_bank_churn_analysis
+|-- .devcontainer
+|   `-- devcontainer.json
+|-- .github
+|   `-- dependabot.yml
+|-- .gitignore
+|-- .vscode
+|   `-- settings.json
+|-- Customer-Churn-Records.csv
+|-- Dockerfile
+|-- Makefile
+|-- README.md
+|-- bank_churn_analysis.py
+|-- bank_churn_analysis_interactive.ipynb
+|-- requirements.txt
+`-- test_bank_churn.py
 
 ### 1. Clone repository: (cmd)
    
   git clone https://github.com/sejal-jagtap/de_bank_churn_analysis.git
 
-### 2. Create and activate the virtual environment: (cmd)
-   
-  .de_bank_churn_analysis\Scripts\activate.bat
+### 2. Navigate to the folder: (cmd)
 
-### 3. Install Dependencies (cmd)
-   
-   pip install -r requirements.txt
-   
-### 4. Make file commands (cmd)
-   
-   make install #Installs dependencies
-   
-   make lint #Runs flake8
+  cd de_bank_churn_analysis
 
-   make format #Formats code with black
-   
-   make clean #Cleans cache and coverage files
+## Environment Setup
+You can set up your environment in two ways: using VS Code dev container or using Docker directly.
 
-### 6. Run the Python script (cmd)
-   
-   python bank_churn_analysis.py
+### Using Dev Container (Recommended)
+  1. Install VSCode (https://code.visualstudio.com/) and the Dev Containers/Remote - Containers extension.
+  2. VS code detects the .devcontainer folder automatically.
+  3. Open cloned project in VS code.
+  4. Open Command Palette:
+     Press Ctrl+Shift+P (Windows/Linux), Cmd+Shift+P (Mac)
+  5. Reopen in Container:
+     Type 'Dev Containers: Reopen in Container' and select.
+     Note:
+     VS Code uses the .devcontainer/devcontainer.json configuration and the Dockerfile at the repo 
+     root to build the container
+  6. Dependencies are installed automatically (make install is run via postCreateCommand)
+  7. Once the container is ready you can run the project using the below commands:
+     make run    #runs the main python script
+     make test   #runs the test file
+     make cleans #cleans cache
 
-### 7. Jupyter notebook attached as a reference
+### OR
+
+### Using Docker
+
+Note: Docker Desktop should be installed on your device.
+      Check docker version to confirm (bash): docker --version
+      Docker Desktop app should be running
+
+  1. Build Docker Image (bash)
+     
+     docker build -t bank_churn_analysis .
+
+  2. Run a container from the image  (bash)
+    
+     docker run -it --name bank_churn_container -v ${PWD}:/workspaces/de_bank_churn_analysis bank_churn_analysis
+  
+    Note: after running this you'll be inside the container:
+    root@<container_id>:/workspaces/de_bank_churn_analysis#
+
+  3. Run commands insdie the container (bash)
+     make install #install dependencies
+     make run     #runs the main python script
+     make test    #runs the test file
+     make cleans  #cleans cache
+
+  4. To exit container (bash)
+
+     exit
+
+  5. To see all containers
+    
+     docker ps -a
 
 
 
+     
 
 
