@@ -121,7 +121,7 @@ de_bank_churn_analysis
 You can set up your environment in two ways: using VS Code dev container or using Docker directly.
 
 ### A] Using Dev Container (Recommended)
-  1. Install VSCode (https://code.visualstudio.com/) and the Dev Containers/Remote - Containers extension.
+  1. Install VSCode (https://code.visualstudio.com/) and the Dev Containers, Remote - Containers extension.
   2. VS Code detects the .devcontainer folder automatically.
   3. Open the cloned project in VS Code.
   4. Open Command Palette:
