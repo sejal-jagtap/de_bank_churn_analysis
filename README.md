@@ -3,7 +3,7 @@ Predict which customers might leave your bank before it happens! 🏃
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
-This project uses Python, Pandas, Scikit-learn and Seaborn.
+This project uses Python, Pandas, Scikit-learn, and Seaborn.
 It trains Random Forrest and Logistic Regression models to predict bank churn and includes exploratory data analysis visualizations.
 ### Jupyter notebook attached as a reference
 
@@ -100,27 +100,14 @@ Tests cover:
 
 Test Result:
 
+<img width="681" height="257" alt="image" src="https://github.com/user-attachments/assets/ca2f6651-3d26-4511-b1c6-599d6cdf65f6" />
 
 ## HOW TO USE THE CODE 💻
 
 Repository structure:
 
 de_bank_churn_analysis
-|-- .devcontainer
-|   `-- devcontainer.json
-|-- .github
-|   `-- dependabot.yml
-|-- .gitignore
-|-- .vscode
-|   `-- settings.json
-|-- Customer-Churn-Records.csv
-|-- Dockerfile
-|-- Makefile
-|-- README.md
-|-- bank_churn_analysis.py
-|-- bank_churn_analysis_interactive.ipynb
-|-- requirements.txt
-`-- test_bank_churn.py
+
 
 ### 1. Clone repository: (cmd)
    
@@ -135,8 +122,8 @@ You can set up your environment in two ways: using VS Code dev container or usin
 
 ### Using Dev Container (Recommended)
   1. Install VSCode (https://code.visualstudio.com/) and the Dev Containers/Remote - Containers extension.
-  2. VS code detects the .devcontainer folder automatically.
-  3. Open cloned project in VS code.
+  2. VS Code detects the .devcontainer folder automatically.
+  3. Open the cloned project in VS Code.
   4. Open Command Palette:
      Press Ctrl+Shift+P (Windows/Linux), Cmd+Shift+P (Mac)
   5. Reopen in Container:
@@ -145,7 +132,7 @@ You can set up your environment in two ways: using VS Code dev container or usin
      VS Code uses the .devcontainer/devcontainer.json configuration and the Dockerfile at the repo 
      root to build the container
   6. Dependencies are installed automatically (make install is run via postCreateCommand)
-  7. Once the container is ready you can run the project using the below commands:
+  7. Once the container is ready, you can run the project using the following commands:
      make run    #runs the main python script
      make test   #runs the test file
      make cleans #cleans cache
@@ -155,12 +142,12 @@ You can set up your environment in two ways: using VS Code dev container or usin
 ### Using Docker
 
 Note: Docker Desktop should be installed on your device.
-      Check docker version to confirm (bash): docker --version
+      Check Docker version to confirm (bash): docker --version
       Docker Desktop app should be running
 
   1. Build Docker Image (bash)
      
-     docker build -t bank_churn_analysis .
+     docker build -t bank_churn_analysis  .
 
   2. Run a container from the image  (bash)
     
@@ -169,9 +156,9 @@ Note: Docker Desktop should be installed on your device.
     Note: after running this you'll be inside the container:
     root@<container_id>:/workspaces/de_bank_churn_analysis#
 
-  3. Run commands insdie the container (bash)
+  3. Run commands inside the container (bash)
      make install #install dependencies
-     make run     #runs the main python script
+     make run     #runs the main Python script
      make test    #runs the test file
      make cleans  #cleans cache
 
