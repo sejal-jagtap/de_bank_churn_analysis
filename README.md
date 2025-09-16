@@ -107,17 +107,9 @@ Test Result:
 Repository structure:
 
 de_bank_churn_analysis
-|-- .devcontainer
-|   -- devcontainer.json
-|-- .gitignore
-|-- Customer-Churn-Records.csv
-|-- Dockerfile
-|-- Makefile
-|-- README.md
-|-- bank_churn_analysis.py
-|-- bank_churn_analysis_interactive.ipynb
-|-- requirements.txt
- -- test_bank_churn.py
+<img width="250" height="152" alt="image" src="https://github.com/user-attachments/assets/656ae696-b262-458d-8b52-887ce8e01d9e" />
+
+Note: DockerFile can be used to build a standalone Docker image if you don’t want to use the dev container.
 
 ### 1. Clone repository: (cmd)
    
