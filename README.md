@@ -105,6 +105,7 @@ Test Result:
 ## HOW TO USE THE CODE 💻
 
 Repository structure: de_bank_churn_analysis
+
 <img width="250" height="152" alt="image" src="https://github.com/user-attachments/assets/656ae696-b262-458d-8b52-887ce8e01d9e" />
 
 Note: Dockerfile can be used to build a standalone Docker image if you don’t want to use the dev container.
