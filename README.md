@@ -66,7 +66,29 @@ LIBRARIES USED
   
   -> Split the dataset into training (80%) and testing (20%) sets.
 
-### 4. ML MODEL
+### 4. MODEL TRAINING
+
+  ##### Divide Train and Test:
+
+  # Training set: To train the model (ML algorithm)
+  # Test Set: Model will be evaluated on test set.
+
+  -> Test will consist of 20% of the total dataset.
+  -> Use train_test_split from package - sklearn.model_selection (import).
+  -> train_test_split shuffles the data and outputs 4 arrays/dataframes.
+  -> input args - features: churn_data excluding exited,
+
+                  label: target column, 
+
+                  test_size: 20% for test,
+
+  -> random_state= seed to ensure reproducibilty
+
+  ##### Approach:
+  The most commonly used metrics are precision and recall, F1 measure, accuracy and confusion matrix.
+  The Scikit Learn library contains classes that can be used to calculate these metrics.
+
+  ##### ML Models:
    
    a. Random Forest Classifier
    
@@ -171,8 +193,7 @@ Note: Docker Desktop should be installed on your device.
     
      docker ps -a
 
-
-
+## REFACTORING 
      
 
 
