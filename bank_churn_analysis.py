@@ -1,84 +1,108 @@
 # flake8: noqa
-import pandas as pd
+from typing import Optional
+
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
-from sklearn.metrics import (
-    accuracy_score,
-    confusion_matrix,
-    classification_report,
-)
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Read data from the csv file
 # Source: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
 
-#Load data and drop unnecessary columns
+
+# Load data and drop unnecessary columns
 def load_data(filepath="Customer-Churn-Records.csv"):
     df = pd.read_csv(filepath)
     df.drop(columns=["RowNumber", "CustomerId", "Surname"], inplace=True)
     return df
 
+
 # Explore the distribution of gender
 
-def plot_gender_distribution(df):
-    plt.figure(figsize=(5, 3))
-    sns.countplot(
-    x="Gender",
-    data=df,
-    palette={"Female": "yellow", "Male": "lightblue"})
-    plt.title("Distribution of Gender")
-    plt.xlabel("Female = 0 , Male = 1")
-    plt.ylabel('Number of Customers')
+
+def plot_gender_distribution(
+    df,
+    figsize: tuple = (5, 3),
+    title: str = "Distribution of Gender",
+    xlabel: str = "Female = 0 , Male = 1",
+    ylabel: str = "Number of Customers",
+    palette: dict = None,  # type: ignore
+):
+    if palette is None:
+        palette = {"Female": "yellow", "Male": "lightblue"}
+
+    plt.figure(figsize=figsize)
+    sns.countplot(x="Gender", data=df, palette=palette)
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.show()
+
 
 # Explore the distribution of age
 
-def plot_age_distribution(df):
-    plt.figure(figsize=(5, 3))
-    sns.histplot(x="Age", data=df, bins=25)
-    plt.ylabel("Number of Customers")
-    plt.title("Distribution of Age")
+
+def plot_age_distribution(
+    df,
+    figsize: tuple = (5, 3),
+    title: str = "Distribution of Age",
+    ylabel: str = "Number of Customers",
+    legend: bool = False,
+):
+    plt.figure(figsize=figsize)
+    sns.histplot(x="Age", data=df, bins=25, legend=legend)
+    plt.title(title)
+    plt.ylabel(ylabel)
     plt.show()
+
 
 # Explore if the customer has credit card?
 
-def plot_credit_card_distribution(df):
-    plt.figure(figsize=(5, 3))
-    sns.countplot(x="HasCrCard", data=df, hue="HasCrCard", palette={0: "red", 1: "green"}, legend= False)
-    plt.title(" Customer Has a Credit Card ?")
-    plt.xlabel(" No = 0 , Yes = 1 ")
-    plt.ylabel("Number of Customers")
+
+def plot_credit_card_distribution(
+    df,
+    figsize: tuple = (5, 3),
+    title: str = " Customer Has a Credit Card ?",
+    xlabel: str = " No = 0 , Yes = 1 ",
+    ylabel: str = "Number of Customers",
+    hue: str = "HasCrCard",
+    legend: bool = False,
+    palette: dict = None,  # type: ignore
+):
+    if palette is None:
+        palette = {0: "red", 1: "green"}
+
+    plt.figure(figsize=figsize)
+    sns.countplot(x="HasCrCard", data=df, hue=hue, palette=palette, legend=legend)
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.show()
 
 
 # Check if there's any relation between individual columns and the output.
-# eg.See if gender has any effect on customer churn.
+# eg.See if gender/geography has any effect on customer churn.
 
-# 1.Gender and Customer Churn Relationship
-# target variable : Exited
 
-def plot_churn_by_gender(df):
+def plot_churn_by_category(
+    df,
+    category: str,
+    figsize: tuple = (5, 3),
+    title: Optional[str] = None,
+    xlabel: Optional[str] = None,
+    ylabel: str = "Number of Customers",
+    legend_labels: list = ["No", "Yes"],
+):
     counts = df.groupby(["Gender", "Exited"]).Exited.count().unstack()
-    gender_exited = counts.plot(kind="bar", stacked=True, figsize=(5,3))
-    gender_exited.set_xlabel("Gender")
-    gender_exited.set_ylabel("Number of Customers")
-    gender_exited.set_title("Customer Churn by Gender")
-    gender_exited.legend(title="Exited",labels=["No","Yes"])
-    plt.show()
-
-# 2. Geography and Customer Churn Relationship
-# target variable : Exited
-
-def plot_churn_by_geography(df):
-    counts = df.groupby(["Geography", "Exited"]).Exited.count().unstack()
-    geo_exited = counts.plot(kind="bar", stacked=True, figsize=(5,3))
-    geo_exited.set_xlabel("Geography")
-    geo_exited.set_ylabel("Number of Customers")
-    geo_exited.set_title("Customer Churn by Geography")
-    geo_exited.legend(title="Exited",labels=["No","Yes"])
+    category_exited = counts.plot(kind="bar", stacked=True, figsize=figsize)
+    category_exited.set_xlabel(xlabel or category)
+    category_exited.set_ylabel(ylabel)
+    category_exited.set_title(title or f"Customer Churn by {category}")
+    category_exited.legend(title="Exited", labels=legend_labels)
     plt.show()
 
 
@@ -93,18 +117,17 @@ def plot_churn_by_geography(df):
 # get_dummies() converts categorical value into binary(0 or 1),
 # iloc[:,1:] - all rows, but drops first column to avoid redundancy
 
+
 def preprocess_data(df):
     temp = df.drop(["Geography", "Gender", "Card Type"], axis=1)
-    Geography = pd.get_dummies(df.Geography).iloc[:,1:]
-    Gender = pd.get_dummies(df.Gender).iloc[:,1:]
-    CardType= pd.get_dummies(df["Card Type"]).iloc[:,1:]
-    df_processed = pd.concat([temp,Geography,Gender,CardType], axis = 1)
+    Geography = pd.get_dummies(df.Geography).iloc[:, 1:]
+    Gender = pd.get_dummies(df.Gender).iloc[:, 1:]
+    CardType = pd.get_dummies(df["Card Type"]).iloc[:, 1:]
+    df_processed = pd.concat([temp, Geography, Gender, CardType], axis=1)
     return df_processed
 
-# ------------------------------------Model Training and Test sets------------------------------------------------
 
-# Training set: To train the model (ML algorithm)
-# Test Set: Model will be evaluated on test set.
+# ------------------------------------Model Training and Test sets------------------------------------------------
 
 # 1 : Divide the data into labels and feature set.
 
@@ -117,18 +140,8 @@ def split_features_labels(df):
     labels = df["Exited"]
     return features, labels
 
-# Check if we still have any categorical values
-#features.select_dtypes(include="object").columns
 
-#Train ML Models:
-
-# Divide training and test
-
-# test will consist of 20% of the total dataset.
-# using train_test_split from package - sklearn.model_selection   (import statement at the beginning)
-# train_test_split shuffles the data and outputs 4 arrays/dataframes
-# input args - features: churn_data excluding exited, label: target column, test_size: 20% for test,
-# random_state= seed to ensure reproducibilty
+# ----------------------------------------ML Models----------------------------------------------------
 
 # 1. Random forest
 # n_estimators:Number of decision trees in the forest.
@@ -137,32 +150,42 @@ def split_features_labels(df):
 # predict() - predicts labels for unseen data, returns an array 'predicted_lables' with values 0/1 for churn,
 # compared to actual test labels to evaluate performance.
 
-def train_random_forest(train_features,train_labels,n_estimators=200,random_state=10):
+
+def train_random_forest(
+    train_features, train_labels, n_estimators=200, random_state=10
+):
     model = rfc(n_estimators=n_estimators, random_state=random_state)
-    model.fit(train_features,train_labels)
+    model.fit(train_features, train_labels)
     return model
 
-# The most commonly used metrics are precision and recall, F1 measure, accuracy and confusion matrix.
-# The Scikit Learn library contains classes that can be used to calculate these metrics.
 
 # 2.Logistic regression:
 
 # from sklearn.linear_model import LogisticRegression
 
-def train_logistic_regression(train_features,train_labels,max_iter=1000,random_state=20):
+
+def train_logistic_regression(
+    train_features, train_labels, max_iter=1000, random_state=20
+):
     scaler = StandardScaler()
-    train_features_scaled = pd.DataFrame(scaler.fit_transform(train_features), columns= train_features.columns)
-    model = LogisticRegression(solver='saga',max_iter=max_iter,random_state=random_state)
+    train_features_scaled = pd.DataFrame(
+        scaler.fit_transform(train_features), columns=train_features.columns
+    )
+    model = LogisticRegression(
+        solver="saga", max_iter=max_iter, random_state=random_state
+    )
     model.fit(train_features_scaled, train_labels)
-    return model,scaler
+    return model, scaler
 
-# Logistic Regression model accuracy: 99.85%
 
-#Predict and Evaluate:
+# Predict and Evaluate:
 
-def predict_and_evaluate(model, test_features, test_labels, scaler=None):
+
+def predict_and_evaluate_model(model, test_features, test_labels, scaler=None):
     if scaler:
-        test_features = pd.DataFrame(scaler.transform(test_features), columns = test_features.columns)
+        test_features = pd.DataFrame(
+            scaler.transform(test_features), columns=test_features.columns
+        )
 
     prediction = model.predict(test_features)
     print("Classification Report: \n", classification_report(test_labels, prediction))
@@ -170,41 +193,45 @@ def predict_and_evaluate(model, test_features, test_labels, scaler=None):
     print("Accuracy score: \n", accuracy_score(test_labels, prediction))
     return prediction
 
-def analysis():
-    #load data
+
+def churn_analysis_training():
+    # load data
     churn_data = load_data()
 
-    #Explore data
+    # Explore data
     plot_gender_distribution(churn_data)
     plot_age_distribution(churn_data)
     plot_credit_card_distribution(churn_data)
-    plot_churn_by_gender(churn_data)
-    plot_churn_by_geography(churn_data)
+    plot_churn_by_category(churn_data, category="Gender")
+    plot_churn_by_category(churn_data, category="Geography")
 
-    #Data Preprocessing
-    preprocessed_churn_data= preprocess_data(churn_data)
+    # Data Preprocessing
+    preprocessed_churn_data = preprocess_data(churn_data)
     features, labels = split_features_labels(preprocessed_churn_data)
-    
-    #Train and Test
+
+    # Train and Test
     train_features, test_features, train_labels, test_labels = train_test_split(
-        features,labels,test_size=0.2,random_state=20
+        features, labels, test_size=0.2, random_state=20
     )
 
-    #Random Forest
+    # Random Forest
     print("\n---- Random Forest ------")
-    rf_model = train_random_forest(train_features,train_labels)
-    rf_predictions= predict_and_evaluate(rf_model,test_features, test_labels)
+    rf_model = train_random_forest(train_features, train_labels)
+    rf_predictions = predict_and_evaluate_model(rf_model, test_features, test_labels)
 
-    #Logistic Regression
+    # Logistic Regression
     print("\n---- Logistic Regression ------")
     lr_model, scaler = train_logistic_regression(train_features, train_labels)
-    lr_predictions = predict_and_evaluate(lr_model, test_features, test_labels, scaler)
+    lr_predictions = predict_and_evaluate_model(
+        lr_model, test_features, test_labels, scaler
+    )
+
 
 if __name__ == "__main__":
-    analysis()
+    churn_analysis_training()
 
 
-'''
+"""
 RESULTS:
 
 ---- Random Forest ------
@@ -240,4 +267,4 @@ Confusion Matrix:
  [   0  377]]
 Accuracy score:
  0.9985
-'''
+"""

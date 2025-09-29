@@ -1,0 +1,38 @@
+name: Run Bank Churn Scripts
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 2a: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2b: Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      # Step 2c: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Step 2d: Run main Python script
+      - name: Run main script
+        run: python bank_churn_analysis.py
+
+      # Step 2e: Run test script (optional)
+      - name: Run test script
+        if: ${{ always() }}
+        run: |
+          if [ -f test_bank_churn.py ]; then python test_bank_churn.py; fi
