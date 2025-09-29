@@ -71,10 +71,10 @@ LIBRARIES USED
   ##### Divide Train and Test:
 
   # Training set: To train the model (ML algorithm)
-  # Test Set: Model will be evaluated on test set.
+  # Test Set: Model will be evaluated on the test set.
 
   -> Test will consist of 20% of the total dataset.
-  -> Use train_test_split from package - sklearn.model_selection (import).
+  -> Use train_test_split from the package sklearn.model_selection (import).
   -> train_test_split shuffles the data and outputs 4 arrays/dataframes.
   -> input args - features: churn_data excluding exited,
 
@@ -82,7 +82,7 @@ LIBRARIES USED
 
                   test_size: 20% for test,
 
-  -> random_state= seed to ensure reproducibilty
+  -> random_state= seed to ensure reproducibility
 
   ##### Approach:
   The most commonly used metrics are precision and recall, F1 measure, accuracy and confusion matrix.
@@ -176,7 +176,7 @@ Note: Docker Desktop should be installed on your device.
     
      docker run -it --name bank_churn_container -v ${PWD}:/workspaces/de_bank_churn_analysis bank_churn_analysis
   
-    Note: after running this you'll be inside the container:
+    Note: after running this, you'll be inside the container:
     root@<container_id>:/workspaces/de_bank_churn_analysis#
 
   3. Run commands inside the container (bash)
