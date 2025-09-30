@@ -1,0 +1,31 @@
+name: Build Devcontainer & Run Scripts
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-devcontainer:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 2a: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2b: Set up Docker
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      # Step 2c: Build devcontainer
+      - name: Build devcontainer image
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: echo "Devcontainer built successfully"
+
+      # Step 2d: Run main script inside devcontainer
+      - name: Run main script in devcontainer
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: python bank_churn_analysis.py
