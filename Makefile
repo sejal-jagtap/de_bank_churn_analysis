@@ -14,6 +14,15 @@ test:
 run:
 	python bank_churn_analysis.py
 
+# Lint code
+lint:
+	flake8 .
+
+# Format code
+format:
+	black .
+	isort .
+
 # Remove pycache files
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +

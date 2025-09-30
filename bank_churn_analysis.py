@@ -1,11 +1,10 @@
-# flake8: noqa
 from typing import Optional
 
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from sklearn.ensemble import RandomForestClassifier as rfc
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier as rfc
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -217,14 +216,12 @@ def churn_analysis_training():
     # Random Forest
     print("\n---- Random Forest ------")
     rf_model = train_random_forest(train_features, train_labels)
-    rf_predictions = predict_and_evaluate_model(rf_model, test_features, test_labels)
+    predict_and_evaluate_model(rf_model, test_features, test_labels)
 
     # Logistic Regression
     print("\n---- Logistic Regression ------")
     lr_model, scaler = train_logistic_regression(train_features, train_labels)
-    lr_predictions = predict_and_evaluate_model(
-        lr_model, test_features, test_labels, scaler
-    )
+    predict_and_evaluate_model(lr_model, test_features, test_labels, scaler)
 
 
 if __name__ == "__main__":

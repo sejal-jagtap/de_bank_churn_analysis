@@ -1,8 +1,5 @@
 import pytest
-import os
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier as rfc
 from sklearn.model_selection import train_test_split
 
 # import functions from main py script
