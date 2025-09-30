@@ -191,14 +191,13 @@ Note: Docker Desktop should be installed on your device.
 
 ## REFACTORING 
 
-  1. GitHub Actions:
+#### 1. GitHub Actions:
 
 [![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 
 [![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 
-
-  2. Refactor using VS Code:
+#### 2. Refactor using VS Code:
 
 a. Extract Method/Variable
 
@@ -212,13 +211,14 @@ b. Rename
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
 
+
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/24f335d1-2c1b-4016-ad20-c89a4f11ad7b" />
 
 c. isort
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/bf78c691-41f5-4b63-9b05-408c24c93641" />
 
-3. Code Formatting:
+#### 3. Code Formatting:
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/fff091b7-543e-4dbc-ba0f-17a2333621aa" />
 
