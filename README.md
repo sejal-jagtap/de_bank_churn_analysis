@@ -193,6 +193,12 @@ Note: Docker Desktop should be installed on your device.
      docker ps -a
 
 ## REFACTORING 
-     
+
+  1. isort
+
+![alt text](images/image.png)
+
+
+  2. 
 
 
