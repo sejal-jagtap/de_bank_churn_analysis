@@ -207,6 +207,8 @@ a. Extract Method/Variable
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/180af370-9213-45c8-b150-6c7742d7797d" />
 
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/be2b062c-798d-4696-90f5-d64618044402" />
+
 b. Rename
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
