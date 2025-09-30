@@ -224,3 +224,7 @@ c. isort
 
 ![alt text](<Screenshot 2025-09-29 195223.png>)
 
+![alt text](image2.png)
+
+![alt text](image1.png)
+
