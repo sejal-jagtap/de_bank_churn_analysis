@@ -202,7 +202,7 @@ Note: Docker Desktop should be installed on your device.
 
 a. Extract Method/Variable
 
-![alt text](images/image.png)
+images\image-1.png
 
 ![alt text](image-2.png)
 
