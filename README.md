@@ -206,17 +206,15 @@ a. Extract Method/Variable
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/180af370-9213-45c8-b150-6c7742d7797d" />
 
-<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
-
-<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/eaf01d23-275c-4a10-8a55-4c80823c2161" />
-
 b. Rename
+
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/de73fba1-2491-4f64-a6e7-a2a6ca3543a8" />
 
 c. isort
 
-<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/545238f6-5004-4276-a3d6-c6717b80e585" />
+
 
 3. Code Formatting:
 
