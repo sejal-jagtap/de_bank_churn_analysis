@@ -1,5 +1,6 @@
 # BANK CHURN ANALYSIS
 Predict which customers might leave your bank before it happens! 🏃
+[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
