@@ -92,11 +92,11 @@ LIBRARIES USED
 
    -> Calculate precision, recall, F1 measure, and support using the below scikit learn classes:
    
-     classification_report()
+         classification_report()
    
-     confusion_matrix()
+         confusion_matrix()
    
-     accuracy_score
+         accuracy_score
 
 ## TESTING
 
@@ -138,11 +138,11 @@ Note: Dockerfile can be used to build a standalone Docker image if you don’t w
 
 ### 1. Clone repository: (cmd)
    
-     git clone https://github.com/sejal-jagtap/de_bank_churn_analysis.git
+           git clone https://github.com/sejal-jagtap/de_bank_churn_analysis.git
 
 ### 2. Navigate to the folder: (cmd)
 
-     cd de_bank_churn_analysis
+           cd de_bank_churn_analysis
 
 ## Environment Setup
 You can set up your environment in two ways: using VS Code dev container or using Docker directly.
