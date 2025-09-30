@@ -71,27 +71,24 @@ LIBRARIES USED
 
 ### 4. MODEL TRAINING
 
-  #### Divide Train and Test:
+  ####A] Divide Train and Test:
 
   ##### Training set: To train the model (ML algorithm)
   ##### Test Set: Model will be evaluated on the test set.
 
   -> Test will consist of 20% of the total dataset.
+  
   -> Use train_test_split from the package sklearn.model_selection (import).
+  
   -> train_test_split shuffles the data and outputs 4 arrays/dataframes.
-  -> input args - features: churn_data excluding exited,
+  
+  -> input args - features: churn_data excluding exited, label: target column, test_size: 20% for test, random_state= seed to ensure reproducibility
 
-                  label: target column, 
-
-                  test_size: 20% for test,
-
-  -> random_state= seed to ensure reproducibility
-
-  #### Approach:
+  ####B] Approach:
   The most commonly used metrics are precision and recall, F1 measure, accuracy and confusion matrix.
   The Scikit Learn library contains classes that can be used to calculate these metrics.
 
-  #### ML Models:
+  ####C] ML Models:
    
    a. Random Forest Classifier
    
