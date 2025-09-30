@@ -202,6 +202,8 @@ Note: Docker Desktop should be installed on your device.
 
 a. Extract Method/Variable
 
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/e6a0890e-8e63-40bf-a89b-c0ab6224c493" />
+
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/52090a5a-53ea-4af8-a370-c8d858e83a05" />
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/180af370-9213-45c8-b150-6c7742d7797d" />
@@ -210,11 +212,11 @@ b. Rename
 
 <img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
 
-<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/de73fba1-2491-4f64-a6e7-a2a6ca3543a8" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/24f335d1-2c1b-4016-ad20-c89a4f11ad7b" />
 
 c. isort
 
-
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/bf78c691-41f5-4b63-9b05-408c24c93641" />
 
 3. Code Formatting:
 
