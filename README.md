@@ -202,31 +202,31 @@ Note: Docker Desktop should be installed on your device.
 
 a. Extract Method/Variable
 
-<img width="964" height="724" alt="image" src="https://github.com/user-attachments/assets/52090a5a-53ea-4af8-a370-c8d858e83a05" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/52090a5a-53ea-4af8-a370-c8d858e83a05" />
 
-<img width="1092" height="648" alt="image" src="https://github.com/user-attachments/assets/180af370-9213-45c8-b150-6c7742d7797d" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/180af370-9213-45c8-b150-6c7742d7797d" />
 
-<img width="1119" height="651" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/f095a19e-c432-41dc-a2d6-18198d7b4668" />
 
-<img width="1119" height="651" alt="image" src="https://github.com/user-attachments/assets/eaf01d23-275c-4a10-8a55-4c80823c2161" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/eaf01d23-275c-4a10-8a55-4c80823c2161" />
 
 b. Rename
 
-<img width="1119" height="651" alt="image" src="https://github.com/user-attachments/assets/de73fba1-2491-4f64-a6e7-a2a6ca3543a8" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/de73fba1-2491-4f64-a6e7-a2a6ca3543a8" />
 
 c. isort
 
-<img width="952" height="727" alt="image" src="https://github.com/user-attachments/assets/545238f6-5004-4276-a3d6-c6717b80e585" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/545238f6-5004-4276-a3d6-c6717b80e585" />
 
 3. Code Formatting:
 
-<img width="1140" height="351" alt="image" src="https://github.com/user-attachments/assets/fff091b7-543e-4dbc-ba0f-17a2333621aa" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/fff091b7-543e-4dbc-ba0f-17a2333621aa" />
 
-<img width="1162" height="336" alt="image" src="https://github.com/user-attachments/assets/82ce012a-a7e8-423e-a5c3-3d73bbac1413" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/82ce012a-a7e8-423e-a5c3-3d73bbac1413" />
 
-<img width="1887" height="820" alt="image" src="https://github.com/user-attachments/assets/a9453ce7-3900-4701-ab87-8ef2e760d378" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/a9453ce7-3900-4701-ab87-8ef2e760d378" />
 
-<img width="1855" height="805" alt="image" src="https://github.com/user-attachments/assets/64198f48-f7bf-4549-b252-16a15e210397" />
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/64198f48-f7bf-4549-b252-16a15e210397" />
 
 
 
