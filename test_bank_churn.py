@@ -1,16 +1,12 @@
-import pytest
 import pandas as pd
+import pytest
 from sklearn.model_selection import train_test_split
 
 # import functions from main py script
-from bank_churn_analysis import (
-    load_data,
-    preprocess_data,
-    split_features_labels,
-    train_random_forest,
-    train_logistic_regression,
-    predict_and_evaluate_model,
-)
+from bank_churn_analysis import (load_data, predict_and_evaluate_model,
+                                 preprocess_data, split_features_labels,
+                                 train_logistic_regression,
+                                 train_random_forest)
 
 
 @pytest.fixture(scope="module")  # runs once per test file

@@ -3,9 +3,10 @@ from typing import Optional
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, classification_report,
+                             confusion_matrix)
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
