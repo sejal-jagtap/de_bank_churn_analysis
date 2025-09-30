@@ -1,5 +1,6 @@
 # BANK CHURN ANALYSIS
 Predict which customers might leave your bank before it happens! 🏃
+
 [![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 [![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 
