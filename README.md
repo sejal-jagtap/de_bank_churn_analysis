@@ -176,16 +176,22 @@ Note: Docker Desktop should be installed on your device.
     root@<container_id>:/workspaces/de_bank_churn_analysis#
 
   3. Run commands inside the container (bash)
+     
      make install #install dependencies
+     
      make run     #runs the main Python script
+     
      make test    #runs the test file
-     make cleans  #cleans cache
+     
+     make clean   #cleans cache
 
-  4. To exit container (bash)
+     make lint    #format
+
+  5. To exit container (bash)
 
      exit
 
-  5. To see all containers
+  6. To see all containers
     
      docker ps -a
 
