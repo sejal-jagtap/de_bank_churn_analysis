@@ -101,6 +101,10 @@ LIBRARIES USED
 ## TESTING
 
 Tests are written with pytest in test_bank_churn.py
+Command: (bash)
+
+         $ pytest test_bank_churn.py
+         $ make test
 
 Tests cover:
 
