@@ -1,9 +1,6 @@
 # BANK CHURN ANALYSIS
 Predict which customers might leave your bank before it happens! 🏃
 
-[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
-[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
-
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
 
 This project uses Python, Pandas, Scikit-learn, and Seaborn.
@@ -194,11 +191,36 @@ Note: Docker Desktop should be installed on your device.
 
 ## REFACTORING 
 
-  1. isort
+  1. GitHub Actions:
+
+[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
+
+[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
+
+
+  2. Refactor using VS Code:
+
+a. Extract Method/Variable
+
+![alt text](image.png)
+
+![alt text](image-2.png)
+
+![alt text](image-1.png)
+
+![alt text](image-4.png)
+
+b. Rename
+
+![alt text](image-3.png)
+
+c. isort
 
 ![alt text](images/image.png)
 
+3. Code Formatting:
 
-  2. 
+![alt text](<Screenshot 2025-09-29 204649.png>)
 
+![alt text](<Screenshot 2025-09-29 195223.png>)
 
