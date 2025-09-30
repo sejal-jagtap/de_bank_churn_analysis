@@ -1,5 +1,7 @@
 # BANK CHURN ANALYSIS
 Predict which customers might leave your bank before it happens! 🏃
+
+[![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 [![Run Bank Churn Scripts](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml/badge.svg)](https://github.com/sejal-jagtap/de_bank_churn_analysis/actions/workflows/python_run.yml)
 
 This project analyzes customer churn in a banking dataset. The goal is to predict whether a customer will leave the bank based on their demographic and account information. Using machine learning models such as Random Forest and Logistic Regression, we evaluate the performance and identify key features that influence churn.
@@ -69,27 +71,23 @@ LIBRARIES USED
 
 ### 4. MODEL TRAINING
 
-  ##### Divide Train and Test:
+  #### A] Divide Train and Test:
 
-  # Training set: To train the model (ML algorithm)
-  # Test Set: Model will be evaluated on the test set.
+  ##### Training set: To train the model (ML algorithm) | Test Set: Model will be evaluated on the test set.
 
   -> Test will consist of 20% of the total dataset.
+  
   -> Use train_test_split from the package sklearn.model_selection (import).
+  
   -> train_test_split shuffles the data and outputs 4 arrays/dataframes.
-  -> input args - features: churn_data excluding exited,
+  
+  -> input args - features: churn_data excluding exited, label: target column, test_size: 20% for test, random_state= seed to ensure reproducibility
 
-                  label: target column, 
-
-                  test_size: 20% for test,
-
-  -> random_state= seed to ensure reproducibility
-
-  ##### Approach:
-  The most commonly used metrics are precision and recall, F1 measure, accuracy and confusion matrix.
+  #### B] Approach:
+  The most commonly used metrics are precision, recall, F1 measure, accuracy, and confusion matrix.
   The Scikit Learn library contains classes that can be used to calculate these metrics.
 
-  ##### ML Models:
+  #### C] ML Models:
    
    a. Random Forest Classifier
    
