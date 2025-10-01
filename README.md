@@ -102,10 +102,11 @@ LIBRARIES USED
 
 Tests are written with pytest in test_bank_churn.py
 
-Command: (bash) Use either of the commands
+Command: (bash) 
 
          pytest test_bank_churn.py
 
+OR 
 
          make test
 
